@@ -1,5 +1,9 @@
 {
-  "plugins": ["transform-react-jsx"],
+  "plugins": [
+    "transform-react-jsx",
+    "emotion",
+    "transform-class-properties"
+  ],
   "presets": [
     ["@babel/preset-env", {
       "targets": {
