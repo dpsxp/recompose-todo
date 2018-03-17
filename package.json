@@ -1,0 +1,21 @@
+{
+  "name": "recompose-todo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Daniel Paulino <danielpaulino030@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.42",
+    "@babel/preset-env": "^7.0.0-beta.42",
+    "babel-loader": "^8.0.0-beta",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "html-webpack-plugin": "^3.0.6",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.12",
+    "webpack-dev-server": "^3.1.1"
+  }
+}
