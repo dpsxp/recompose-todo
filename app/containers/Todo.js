@@ -2,17 +2,14 @@ import React, { PureComponent, Component } from 'react'
 import styled from 'react-emotion'
 
 const generateId = () => (
-  parseInt((Math.random() * Math.random()) * 1000)
+  Math.floor((Math.random() * 1000))
 )
 
 export default class TodoContainer extends Component {
   state = {
     todos:[
       { id: generateId(), description: 'Do Something', completed: true },
-      { id: generateId(), description: 'Do Something', completed: false },
-      { id: generateId(), description: 'Do Something', completed: false },
-      { id: generateId(), description: 'Do Something', completed: false },
-      { id: generateId(), description: 'Do Something', completed: true }
+      { id: generateId(), description: 'Do Something', completed: false }
     ]
   }
 
@@ -77,7 +74,13 @@ class TodoInput extends PureComponent {
 
     return (
       <form onSubmit={this.handleSubmit}>
-        <MainInput name="new_todo" type="text" value={newTodo} onChange={this.handleChange} />
+        <MainInput
+          placeholder='What needs to be done?'
+          name="new_todo"
+          type="text"
+          value={newTodo}
+          onChange={this.handleChange}
+        />
       </form>
     )
   }
@@ -114,11 +117,31 @@ const TodoList = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
+  position: relative;
+
+  :before {
+    content: '';
+    display: block;
+    z-index: -1;
+    overflow: hidden;
+    box-shadow:
+      0 -34px 0px 24px #c3c3c3,
+      0 -25px 0 21px white,
+      0 -24px 0px 21px #c3c3c3,
+      0 -11px 0 13px white,
+      0 -10px 0px 13px #c3c3c3,
+      0 -1px 0 8px white,
+      0 0px 0px 8px #c3c3c3;
+    position: absolute;
+    bottom: -10px;
+    right: 25px;
+    width: 450px;
+  }
 `
 
 const TodoContent = styled.div`
   width: 500px;
-  box-shadow: 0px 13px 86px #c3c3c3;
+  position: relative;
 `
 
 const TodoHeader = styled.h1`
