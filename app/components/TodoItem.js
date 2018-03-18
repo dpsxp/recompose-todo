@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'react-emotion'
 
-export default function TodoItem ({ todo, onChange, onRemove, className }) {
+function TodoItem ({ todo, onChange, onRemove, className }) {
   return (
     <li className={className}>
       <input
@@ -19,6 +19,20 @@ export default function TodoItem ({ todo, onChange, onRemove, className }) {
   )
 }
 
+export default styled(TodoItem)`
+  display: flex;
+  align-items: center;
+  padding: 0;
+  background: #FFF;
+  border-bottom: 1px solid rgba(195, 195, 195, 0.4);
+  font-size: 1.5em;
+  color: #6d6c6c;
+  font-weight: 300;
+
+  label {
+    text-decoration: ${props => props.todo.completed ? 'line-through' : 'inherit' };
+  }
+`
 
 const RemoveButton = styled.button`
   font-size: 1.5em;
