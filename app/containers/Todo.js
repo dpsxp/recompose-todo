@@ -2,7 +2,6 @@ import React, { PureComponent, Component } from 'react'
 import { componentFromStream } from 'recompose'
 import {
   selector,
-  addAction,
   removeAction,
   changeAction,
   filterAction
@@ -12,6 +11,7 @@ import TodoItem from '../components/TodoItem'
 import TodoInput from '../components/TodoInput'
 import TodoFooter from '../components/TodoFooter'
 import { Root, TodoContent, TodoList, TodoHeader } from './styles'
+import { addTodo } from '../actions/addTodo'
 
 function TodoContainer ({
   todos,
@@ -58,7 +58,7 @@ export default componentFromStream((props$) => {
         todos={todos}
         active={active}
         filter={filter}
-        onAdd={addAction}
+        onAdd={addTodo}
         onRemove={removeAction}
         onChange={changeAction}
         onFilterChange={filterAction}

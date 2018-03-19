@@ -5,8 +5,6 @@ const store = Rx.Observable.merge(
   todoStream().map((todos) => ({ todos }))
 )
 .startWith({})
-.scan((store, change = {}) => {
-  return Object.assign(store, change)
-})
+.scan(Object.assign)
 
 export default store
